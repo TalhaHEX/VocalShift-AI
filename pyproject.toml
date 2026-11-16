@@ -1,0 +1,32 @@
+[project]
+name = "audiotrackchanger"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "TalhaZunair", email = "talhazunair37@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "celery>=5.7.0",
+    "edge-tts>=7.3.1",
+    "fastapi[standard]>=0.162.0",
+    "google-genai>=2.34.0",
+    "moviepy>=2.2.1",
+    "openai-whisper>=20250625",
+    "packaging>=26.3",
+    "psycopg2-binary>=2.9.13",
+    "pwdlib[bcrypt]>=0.4.0",
+    "pyjwt>=2.15.1",
+    "python-multipart>=0.0.33",
+    "redis>=8.1.0",
+    "sqlalchemy>=2.1.8",
+    "uvicorn>=0.54.0",
+]
+
+[project.scripts]
+audiotrackchanger = "audiotrackchanger:main"
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"
