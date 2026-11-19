@@ -59,7 +59,6 @@ postgres_data/
 # OS / Editor Files
 .DS_Store
 Thumbs.db
-Screenshot*.png
 .vscode/
 .idea/
 *.swp

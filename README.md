@@ -15,6 +15,10 @@
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License" />
 </p>
 
+<p align="center">
+  <img src="docs/vocalshift-studio-preview.png" alt="VocalShift Studio Interface" width="900" />
+</p>
+
 ---
 
 ## 🌟 Overview
