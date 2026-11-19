@@ -16,29 +16,45 @@ services:
       - "6379:6379"
 
   web:
-    build: .
+    build:
+      context: ./Backend
     ports:
       - "3003:3003"
+    volumes:
+      - ./Backend:/app
     environment:
       - DATABASE_URL=postgresql+psycopg2://postgres:root@db:5432/audio_db
       - REDIS_URL=redis://redis:6379/0
     env_file:
-      - .env
+      - ./Backend/.env
     depends_on:
       - db
       - redis
 
   worker:
-    build: .
+    build:
+      context: ./Backend
     command: celery -A src.celery_app.celery_app worker --loglevel=info
+    volumes:
+      - ./Backend:/app
     environment:
       - DATABASE_URL=postgresql+psycopg2://postgres:root@db:5432/audio_db
       - REDIS_URL=redis://redis:6379/0
     env_file:
-      - .env
+      - ./Backend/.env
     depends_on:
       - db
       - redis
-      
+
+  frontend:
+    build:
+      context: ./Frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:3003
+    depends_on:
+      - web
+
 volumes:
   postgres_data:

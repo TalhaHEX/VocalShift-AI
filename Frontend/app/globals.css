@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: #E2E8F0;
+  }
+
+  body {
+    background-color: #F6F8FD;
+    color: #0F172A;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Fluid ethereal ambient mesh background inspired by reference design */
+.ambient-canvas {
+  background-color: #F6F8FD;
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(224, 231, 255, 0.75) 0px, transparent 45%),
+    radial-gradient(at 85% 10%, rgba(243, 232, 255, 0.8) 0px, transparent 40%),
+    radial-gradient(at 50% 50%, rgba(248, 250, 255, 0.9) 0px, transparent 60%),
+    radial-gradient(at 20% 85%, rgba(224, 242, 254, 0.6) 0px, transparent 50%),
+    radial-gradient(at 80% 85%, rgba(254, 243, 199, 0.35) 0px, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* Custom refined scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
